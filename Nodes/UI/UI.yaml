@@ -1458,6 +1458,17 @@ Children:
       - Name: SelectedValue
         Type: BaseDataVariableType
         DataType: BaseDataType
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../DefaultSelectedRecipe"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
       - Name: SelectedItem
         Type: NodePointer
         DataType: NodeId
@@ -1634,6 +1645,21 @@ Children:
             Type: PropertyType
             DataType: UInt16
             Value: 0
+      - Name: DefaultSelectedRecipe
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../DefaultSelectedRecipe"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
     - Name: RecipeSchema
       Type: NodePointer
       DataType: NodeId
@@ -6442,6 +6468,10 @@ Children:
           Description: {"NamespaceIndex":2,"TextId":"SetArrayIndexDescription"}
           ValueRank: ScalarOrOneDimension
           Value: 0
+    - Name: DefaultSelectedRecipe
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
   - Name: AlwaysOnTop
     Type: BaseDataVariableType
     DataType: Boolean
