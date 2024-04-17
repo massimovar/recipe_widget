@@ -501,6 +501,7 @@ public class RecipeController : BaseNetLogic
         if (val.GetType().IsArray)
         {
             Array.Clear(((Array)val), 0, ((Array)val).Length);
+            iUAVariable.Value = new UAValue(val);
         }
         else
         {
