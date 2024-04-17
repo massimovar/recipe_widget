@@ -1809,7 +1809,7 @@ Children:
                 DataType: LocalizedText
                 ReferenceType: HasParameter
                 ModellingRule: Optional
-                Value: {"LocaleId":"en-US","Text":"{0} details"}
+                Value: {"LocaleId":"en-US","Text":"{0} "}
               - Name: ns=2;Source0
                 Type: BaseDataVariableType
                 DataType: BaseDataType
@@ -1888,7 +1888,7 @@ Children:
                 DataType: String
                 ReferenceType: HasParameter
                 ModellingRule: Optional
-                Value: "{0} && !{1}"
+                Value: "{0}"
               - Name: ns=2;Source0
                 Type: BaseDataVariableType
                 DataType: BaseDataType
@@ -1898,15 +1898,6 @@ Children:
                   Type: DynamicLink
                   DataType: NodePath
                   Value: "../../../../RenamingMode"
-              - Name: ns=2;Source1
-                Type: BaseDataVariableType
-                DataType: BaseDataType
-                ReferenceType: HasSource
-                Children:
-                - Name: DynamicLink
-                  Type: DynamicLink
-                  DataType: NodePath
-                  Value: "../../../../CreationMode"
           - Name: ImagePath
             Type: BaseDataVariableType
             DataType: ResourceUri
@@ -1916,6 +1907,25 @@ Children:
             Type: BaseDataVariableType
             DataType: Boolean
             Value: true
+            Children:
+            - Name: ExpressionEvaluator1
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "!{0}"
+              - Name: ns=2;Source0
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../CreationMode"
           - Name: Width
             Type: BaseVariableType
             DataType: Size
