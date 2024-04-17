@@ -473,6 +473,58 @@ public class RecipeController : BaseNetLogic
         }
     }
 
+
+
+    [ExportMethod]
+    public void ResetEditModel(NodeId editModelId)
+    {
+        var editModel = InformationModel.Get(editModelId);
+        foreach (var item in editModel.Children)
+        {
+            switch (item.NodeClass)
+            {
+                case NodeClass.Object:
+                    ResetEditModel(item.NodeId);
+                    break;
+                case NodeClass.Variable:
+                    ResetVariableValue(item as IUAVariable);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private static void ResetVariableValue(IUAVariable iUAVariable)
+    {
+        var val = iUAVariable.Value.Value;
+        if (val.GetType().IsArray)
+        {
+            Array.Clear(((Array)val), 0, ((Array)val).Length);
+        }
+        else
+        {
+            switch (val)
+            {
+                case string:
+                    iUAVariable.Value = string.Empty;
+                    break;
+                case int:
+                case short:
+                case long:
+                case float:
+                    iUAVariable.Value = 0;
+                    break;
+                case bool:
+                    iUAVariable.Value = false;
+                    break;
+                default:
+                    iUAVariable.Value = 0;
+                    break;
+            }
+        }
+    }
+
     private void SetFeedback(byte result, string message)
     {
         // result = 0 --> Idle

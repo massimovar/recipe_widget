@@ -24,6 +24,12 @@ Children:
       Type: BaseDataVariableType
       DataType: Float
       Value: 0.0
+    - Name: Variable5
+      Type: BaseDataVariableType
+      DataType: Int32
+      ValueRank: OneDimension
+      ArrayDimensions: [10]
+      Value: [0,0,0,0,0,0,0,0,0,0]
   - Class: Reference
     Target: ns=15;i=27
     Direction: Forward
@@ -79,7 +85,7 @@ Children:
       DataType: NodeId
       Value: {"IdType":0,"Id":0,"Namespace":-1}
   - Name: EditModel
-    Id: g=2690ac86934b5ddc440460bcc9c13236
+    Id: g=f2a479c0c8cb06e079351c3125a46121
     Type: BaseObjectType
     Children:
     - Name: Variable1
@@ -98,3 +104,9 @@ Children:
       Type: BaseDataVariableType
       DataType: Float
       Value: 0.0
+    - Name: Variable5
+      Type: BaseDataVariableType
+      DataType: Int32
+      ValueRank: OneDimension
+      ArrayDimensions: [10]
+      Value: [0,0,0,0,0,0,0,0,0,0]

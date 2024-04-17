@@ -33,7 +33,7 @@ public class RecipesEditorUISetup : BaseNetLogic
             var controlsContainer = GetControlsContainer();
             CleanUI(controlsContainer);
 
-            ConfigureComboBox();
+            //ConfigureComboBox();
 
             var targetNode = GetTargetNode();
 
@@ -42,6 +42,57 @@ public class RecipesEditorUISetup : BaseNetLogic
         catch (Exception e)
         {
             Log.Error("RecipesEditor", e.Message);
+        }
+    }
+
+
+    [ExportMethod]
+    public void ResetEditModel(NodeId editModelId)
+    {
+        var editModel = InformationModel.Get(editModelId);
+        foreach (var item in editModel.Children)
+        {
+            switch (item.NodeClass)
+            {
+                case NodeClass.Object:
+                    ResetEditModel(item.NodeId);
+                    break;
+                case NodeClass.Variable:
+                    ResetVariableValue(item as IUAVariable);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private static void ResetVariableValue(IUAVariable iUAVariable)
+    {
+        var val = iUAVariable.Value.Value;
+        if (val.GetType().IsArray)
+        {
+            Array.Clear(((Array)val), 0, ((Array)val).Length);
+        }
+        else
+        {
+            switch (val)
+            {
+                case string:
+                    iUAVariable.Value = string.Empty;
+                    break;
+                case int:
+                case short:
+                case long:
+                case float:
+                    iUAVariable.Value = 0;
+                    break;
+                case bool:
+                    iUAVariable.Value = false;
+                    break;
+                default:
+                    iUAVariable.Value = 0;
+                    break;
+            }
         }
     }
 
@@ -231,6 +282,7 @@ public class RecipesEditorUISetup : BaseNetLogic
 
         label2.VerticalAlignment = VerticalAlignment.Center;
         label2.HorizontalAlignment = HorizontalAlignment.Right;
+        label2.RightMargin = 50;
         panel.Add(label2);
 
         return panel;

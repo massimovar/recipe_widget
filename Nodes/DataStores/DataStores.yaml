@@ -46,6 +46,46 @@ Children:
           Type: StoreColumn
           DataType: Float
           Value: 0.0
+        - Name: /Variable5_0
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_1
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_2
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_3
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_4
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_5
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_6
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_7
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_8
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: /Variable5_9
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
   - Class: Reference
     Target: ns=18;i=30
     Direction: Forward

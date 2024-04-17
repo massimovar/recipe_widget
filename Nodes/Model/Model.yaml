@@ -25,3 +25,10 @@ Children:
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
+  - Name: Variable5
+    Id: g=102d2680670316b4f90be2b77f14ed24
+    Type: BaseDataVariableType
+    DataType: Int32
+    ValueRank: OneDimension
+    ArrayDimensions: [10]
+    Value: [0,0,0,0,0,0,0,0,0,0]
