@@ -1691,7 +1691,7 @@ Children:
         Type: BaseDataVariableType
         DataType: Size
         ModellingRule: Optional
-        Value: 20.0
+        Value: 25.0
       - Name: Visible
         Type: BaseDataVariableType
         DataType: Boolean
