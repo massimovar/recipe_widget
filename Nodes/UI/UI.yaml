@@ -2468,16 +2468,7 @@ Children:
                 DataType: String
                 ReferenceType: HasParameter
                 ModellingRule: Optional
-                Value: "{0} && !{1}"
-              - Name: ns=2;Source0
-                Type: BaseDataVariableType
-                DataType: BaseDataType
-                ReferenceType: HasSource
-                Children:
-                - Name: DynamicLink
-                  Type: DynamicLink
-                  DataType: NodePath
-                  Value: "../../../../CreationMode"
+                Value: "!{1}"
               - Name: ns=2;Source1
                 Type: BaseDataVariableType
                 DataType: BaseDataType
