@@ -1,0 +1,27 @@
+Name: Model
+Type: ModelCategoryFolder
+Children:
+- Name: Object1
+  Id: g=bc1a0e84f2974709f1ef223abd8e40d1
+  Type: BaseObjectType
+  Children:
+  - Name: Variable1
+    Id: g=dc5af060b27194785fb1a41984dbf5c7
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Variable2
+    Id: g=4fbc0dfb1ba8e68709b98b76c1b94a1b
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: Variable3
+    Id: g=a828b5919a19671e61669572191f0296
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Variable4
+    Id: g=845324ababeeb83ed838aa90ffd252a4
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
